@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shriram | Smart Construction Management</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ================================
+         PARTICLE BACKGROUND
+    ================================= -->
+
+    <div class="construction-particles">
+        <span>⚙️</span>
+        <span>🔧</span>
+        <span>⚙️</span>
+        <span>🏗️</span>
+        <span>🔩</span>
+        <span>🧱</span>
+        <span>🔧</span>
+        <span>⚙️</span>
+    </div>
+
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🏗️ <span>SHRI</span>RAM
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#projects">Projects</a>
+            <a href="#progress">Analytics</a>
+            <a href="#workers">Workers</a>
+            <a href="#materials">Materials</a>
+        </nav>
+
+        <button class="admin-btn">
+            Admin
+        </button>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero">
+
+        <div class="hero-background"></div>
+
+        <div class="hero-text">
+
+            <p class="tag">
+                SMART CONSTRUCTION MANAGEMENT
+            </p>
+
+            <h1>
+                Build Better.<br>
+                <span>Build Smarter.</span>
+            </h1>
+
+            <p class="hero-description">
+                Manage construction projects, workers, materials,
+                budgets and progress from one powerful dashboard.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="showMessage()"
+                >
+                    + Add New Project
+                </button>
+
+                <a
+                    href="#dashboard"
+                    class="secondary-btn"
+                >
+                    Explore Dashboard ↓
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Floating Dashboard Card -->
+
+        <div class="hero-card">
+
+            <div class="card-top">
+
+                <span class="live-dot"></span>
+
+                <span>LIVE PROJECT</span>
+
+            </div>
+
+            <div class="helmet">
+                👷
+            </div>
+
+            <h3>
+                Metro Tower
+            </h3>
+
+            <p>
+                Construction Progress
+            </p>
+
+            <div class="hero-progress">
+
+                <div class="hero-progress-fill"></div>
+
+            </div>
+
+            <div class="progress-number">
+                68%
+            </div>
+
+            <div class="hero-details">
+
+                <div>
+                    <strong>₹64.2L</strong>
+                    <small>Budget Used</small>
+                </div>
+
+                <div>
+                    <strong>184</strong>
+                    <small>Workers</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         DASHBOARD
+    ================================= -->
+
+    <section
+        id="dashboard"
+        class="section reveal"
+    >
+
+        <div class="section-heading">
+
+            <div>
+                <p class="tag">
+                    OVERVIEW
+                </p>
+
+                <h2>
+                    Project Dashboard
+                </h2>
+            </div>
+
+            <span class="project-status">
+                ● Project Active
+            </span>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange">
+                    🏗️
+                </div>
+
+                <div>
+                    <p>Total Projects</p>
+                    <h2
+                        class="counter"
+                        data-target="12"
+                    >
+                        0
+                    </h2>
+                    <small>+3 this month</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    👷
+                </div>
+
+                <div>
+                    <p>Workers</p>
+                    <h2
+                        class="counter"
+                        data-target="184"
+                    >
+                        0
+                    </h2>
+                    <small>Currently active</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green">
+                    🧱
+                </div>
+
+                <div>
+                    <p>Material Stock</p>
+                    <h2
+                        class="counter"
+                        data-target="87"
+                    >
+                        0
+                    </h2>
+                    <small>% Available</small>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple">
+                    💰
+                </div>
+
+                <div>
+                    <p>Budget Used</p>
+                    <h2
+                        class="counter"
+                        data-target="64"
+                    >
+                        0
+                    </h2>
+                    <small>% of total budget</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PROJECTS
+    ================================= -->
+
+    <section
+        id="projects"
+        class="section reveal"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="tag">
+                    ACTIVE PROJECTS
+                </p>
+
+                <h2>
+                    Construction Sites
+                </h2>
+
+            </div>
+
+            <button
+                class="add-btn"
+                onclick="showMessage()"
+            >
+                + New Project
+            </button>
+
+        </div>
+
+
+        <div class="project-grid">
+
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-image building-one">
+
+                    <div class="building-icon">
+                        🏢
+                    </div>
+
+                    <span class="project-label">
+                        COMMERCIAL
+                    </span>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-title">
+
+                        <div>
+
+                            <h3>
+                                Metro Tower
+                            </h3>
+
+                            <p>
+                                📍 Pune, Maharashtra
+                            </p>
+
+                        </div>
+
+                        <span class="project-percent">
+                            68%
+                        </span>
+
+                    </div>
+
+                    <div class="mini-progress">
+
+                        <div
+                            class="mini-progress-fill"
+                            style="width:68%"
+                        ></div>
+
+                    </div>
+
+                    <div class="project-bottom">
+
+                        <span>
+                            📅 Dec 2026
+                        </span>
+
+                        <button>
+                            View Project →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-image building-two">
+
+                    <div class="building-icon">
+                        🏘️
+                    </div>
+
+                    <span class="project-label">
+                        RESIDENTIAL
+                    </span>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-title">
+
+                        <div>
+
+                            <h3>
+                                Green Valley
+                            </h3>
+
+                            <p>
+                                📍 Mumbai, Maharashtra
+                            </p>
+
+                        </div>
+
+                        <span class="project-percent">
+                            42%
+                        </span>
+
+                    </div>
+
+                    <div class="mini-progress">
+
+                        <div
+                            class="mini-progress-fill green-fill"
+                            style="width:42%"
+                        ></div>
+
+                    </div>
+
+                    <div class="project-bottom">
+
+                        <span>
+                            📅 Mar 2027
+                        </span>
+
+                        <button>
+                            View Project →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="project-card">
+
+                <div class="project-image building-three">
+
+                    <div class="building-icon">
+                        🏭
+                    </div>
+
+                    <span class="project-label">
+                        INDUSTRIAL
+                    </span>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-title">
+
+                        <div>
+
+                            <h3>
+                                Industrial Hub
+                            </h3>
+
+                            <p>
+                                📍 Nashik, Maharashtra
+                            </p>
+
+                        </div>
+
+                        <span class="project-percent">
+                            81%
+                        </span>
+
+                    </div>
+
+                    <div class="mini-progress">
+
+                        <div
+                            class="mini-progress-fill blue-fill"
+                            style="width:81%"
+                        ></div>
+
+                    </div>
+
+                    <div class="project-bottom">
+
+                        <span>
+                            📅 Nov 2026
+                        </span>
+
+                        <button>
+                            View Project →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         ANALYTICS
+    ================================= -->
+
+    <section
+        id="progress"
+        class="section reveal"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="tag">
+                    ANALYTICS
+                </p>
+
+                <h2>
+                    Construction Performance
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-grid">
+
+            <div class="chart-box">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h3>
+                            Monthly Progress
+                        </h3>
+
+                        <p>
+                            Project completion trend
+                        </p>
+
+                    </div>
+
+                    <span>
+                        📈 +18%
+                    </span>
+
+                </div>
+
+                <canvas
+                    id="progressChart"
+                ></canvas>
+
+            </div>
+
+
+            <div class="chart-box">
+
+                <div class="chart-header">
+
+                    <div>
+
+                        <h3>
+                            Budget Distribution
+                        </h3>
+
+                        <p>
+                            Current expenditure
+                        </p>
+
+                    </div>
+
+                    <span>
+                        💰 ₹64.2L
+                    </span>
+
+                </div>
+
+                <canvas
+                    id="budgetChart"
+                ></canvas>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WORKERS
+    ================================= -->
+
+    <section
+        id="workers"
+        class="section reveal"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="tag">
+                    TEAM MANAGEMENT
+                </p>
+
+                <h2>
+                    Site Workers
+                </h2>
+
+            </div>
+
+            <button
+                class="add-btn"
+                onclick="addWorker()"
+            >
+                + Add Worker
+            </button>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Worker</th>
+                        <th>Role</th>
+                        <th>Site</th>
+                        <th>Status</th>
+                        <th>Experience</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="workerTable">
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Rahul Patil
+                            </strong>
+                        </td>
+
+                        <td>
+                            Site Engineer
+                        </td>
+
+                        <td>
+                            Metro Tower
+                        </td>
+
+                        <td>
+                            <span class="online">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+                            8 Years
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Amit Patil
+                            </strong>
+                        </td>
+
+                        <td>
+                            Supervisor
+                        </td>
+
+                        <td>
+                            Green Valley
+                        </td>
+
+                        <td>
+                            <span class="online">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+                            6 Years
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Vikas More
+                            </strong>
+                        </td>
+
+                        <td>
+                            Mason
+                        </td>
+
+                        <td>
+                            Industrial Hub
+                        </td>
+
+                        <td>
+                            <span class="offline">
+                                On Leave
+                            </span>
+                        </td>
+
+                        <td>
+                            10 Years
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         MATERIALS
+    ================================= -->
+
+    <section
+        id="materials"
+        class="section reveal"
+    >
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="tag">
+                    INVENTORY
+                </p>
+
+                <h2>
+                    Material Stock
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="material-grid">
+
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    🧱
+                </div>
+
+                <h3>
+                    Cement
+                </h3>
+
+                <p>
+                    820 Bags Available
+                </p>
+
+                <div class="stock-bar">
+                    <div style="width:82%"></div>
+                </div>
+
+                <strong>
+                    82%
+                </strong>
+
+            </div>
+
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    🔩
+                </div>
+
+                <h3>
+                    Steel
+                </h3>
+
+                <p>
+                    12.5 Tons Available
+                </p>
+
+                <div class="stock-bar">
+                    <div style="width:65%"></div>
+                </div>
+
+                <strong>
+                    65%
+                </strong>
+
+            </div>
+
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    🪨
+                </div>
+
+                <h3>
+                    Sand
+                </h3>
+
+                <p>
+                    45 Tons Available
+                </p>
+
+                <div class="stock-bar">
+                    <div style="width:91%"></div>
+                </div>
+
+                <strong>
+                    91%
+                </strong>
+
+            </div>
+
+
+            <div class="material-card">
+
+                <div class="material-icon">
+                    🪵
+                </div>
+
+                <h3>
+                    Wood
+                </h3>
+
+                <p>
+                    240 Pieces Available
+                </p>
+
+                <div class="stock-bar">
+                    <div style="width:48%"></div>
+                </div>
+
+                <strong>
+                    48%
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <h2>
+                🏗️ SHRI<span>RAM</span>
+            </h2>
+
+            <p>
+                Smart technology for modern construction.
+            </p>
+
+        </div>
+
+        <div class="footer-info">
+
+            <p>
+                Construction Management System
+            </p>
+
+            <p>
+                © 2026 Shriram Construction
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
